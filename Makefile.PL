@@ -7,7 +7,7 @@ license  'perl';
 
 #  needed for build only
 build_requires 'Test::More';
-build_requires 'Test::Moose";
+build_requires 'Test::Moose';
 
 #  needed for module
 requires 'Date::Calc';

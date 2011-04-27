@@ -1,5 +1,7 @@
 package Date::FromToday;
 
+our $VERSION = '0.02';
+
 use warnings;
 use strict;
 

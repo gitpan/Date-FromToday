@@ -1,8 +1,7 @@
 package Date::FromToday;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
-use warnings;
 use strict;
 
 use Moose;
@@ -18,7 +17,6 @@ subtype 'ValidDate'
     => as 'Str'
     => where { _check_date( $_ ) }
     => message { "This date ($_), does not match MM_DD_YYYY!" };
-
 
 
 has '_calculated_date' => (
@@ -49,13 +47,6 @@ has 'year' => (
     builder => '_year_builder'
 );
 
-#has 'date_string' => (
-#    is => 'ro',
-#    isa => 'Str',
-#    required => 1,
-#    lazy => 1,
-#    builder => '_date_string_builder'
-#);
 
 has 'move' => (
     is => 'ro',
@@ -185,12 +176,7 @@ Date::FromToday - Calculate the date in the past or future X days from today
 
 =head1 VERSION
 
-Version 0.01
-
-=cut
-
-our $VERSION = '0.01';
-
+Version 0.03
 
 =head1 SYNOPSIS
 
@@ -210,7 +196,7 @@ translation, forcing today's date, number of digits in the year.
 
 -or-
 
-    use Date::FromToday->new(
+    Date::FromToday->new(
         move => -1,
         month_translator => [
             qw(
@@ -220,7 +206,7 @@ translation, forcing today's date, number of digits in the year.
         date_string_format => '{M}.{D}.{Y}',
         leading_zeros => 0,
         year_digits => 2,
-    )
+    );
 
     #  prints yesterday's date looking like Jan_1_11
 
@@ -356,4 +342,5 @@ See http://dev.perl.org/licenses/ for more information.
 
 =cut
 
-1; # End of Date::FromToday
+
+1;  #  end Date::FromToday

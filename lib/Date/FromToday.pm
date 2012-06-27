@@ -1,6 +1,6 @@
 package Date::FromToday;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 use strict;
 
@@ -8,7 +8,6 @@ use Moose;
 use Moose::Util::TypeConstraints;
 use Carp;
 use Date::Calc qw{ Today Day_of_Week Add_Delta_Days check_date };
-use Data::Dumper;
 
 use namespace::autoclean;
 
@@ -176,7 +175,7 @@ Date::FromToday - Calculate the date in the past or future X days from today
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =head1 SYNOPSIS
 
@@ -196,20 +195,20 @@ translation, forcing today's date, number of digits in the year.
 
 -or-
 
-    Date::FromToday->new(
+    my $date = Date::FromToday->new(
         move => -1,
         month_translator => [
             qw(
                 Jan Feb Mar Apr May June July Aug Sept Oct Nov Dec
-            )
+            ),
         ],
         date_string_format => '{M}.{D}.{Y}',
         leading_zeros => 0,
         year_digits => 2,
     );
 
-    #  prints yesterday's date looking like Jan_1_11
-
+    #  prints yesterday's date looking like Jan.1.11
+    print $date->date_string;
 
 =head1 CONSTRUCTOR AND STARTUP
 
@@ -245,7 +244,7 @@ Determines how the month will be displayed:
     month_translator => [
         qw(
             Jan Feb Mar Apr May June July Aug Sept Oct Nov Dec
-        )
+        ),
     ],
 
 =item * C<< force_today => MM_DD_YYYY >>
@@ -285,7 +284,7 @@ Returns the date in a string as specified by the 'format' param.
 
 =head1 AUTHOR
 
-Adam H Wohld, C<< <adam at jamradar.com> >>
+Adam Wohld, C<< <adam at spatialsystems.org> >>
 
 =head1 BUGS
 
@@ -325,13 +324,9 @@ L<http://search.cpan.org/dist/Date-FromToday/>
 
 =back
 
-
-=head1 ACKNOWLEDGEMENTS
-
-
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2011 Adam H Wohld.
+Copyright 2011 Adam Wohld.
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of either: the GNU General Public License as published

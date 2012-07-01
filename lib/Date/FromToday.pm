@@ -1,6 +1,6 @@
 package Date::FromToday;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 use strict;
 
@@ -175,7 +175,7 @@ Date::FromToday - Calculate the date in the past or future X days from today
 
 =head1 VERSION
 
-Version 0.04
+Version 0.05
 
 =head1 SYNOPSIS
 
@@ -227,7 +227,7 @@ Here are the parms for Date::FromToday
 Adds or subtracts days to the current date.  Negative numbers move back
 in time, positive move into future. Required.
 
-=item * C<< format => M_D_Y >>
+=item * C<< date_string_format => {M}_{D}_{Y} >>
 
 Decides on how to format the date_string method.  M will be replaced by the
 Month, D with the Day, and Y with the Year.
@@ -278,7 +278,7 @@ Returns the calculated year
 
 =head2 date_string
 
-Returns the date in a string as specified by the 'format' param.
+Returns the date in a string as specified by the 'date_sting_format' param.
 
 
 

@@ -1,10 +1,14 @@
 Revision history for Date-FromToday
 
+
+0.05    7.1.2012/14:20 CST 
+        Updated documentation.
+
 0.04    6.28.2012/12:18 CST
-	Updated documentation, removed Data::Dumper, reworked Build.PL.
+	    Updated documentation, removed Data::Dumper, reworked Build.PL.
 
 0.03	6.27.2012/18:00 CST
-	Eliminated Module::Install dependency.
+    	Eliminated Module::Install dependency.
 
 0.01    3.27.2011/16:05 CST
         First version, released on an unsuspecting world.
